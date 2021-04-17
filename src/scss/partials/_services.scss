@@ -1,0 +1,88 @@
+#services {
+  background-color: white;
+}
+.service-box {
+  padding: 2rem;
+  border: 1px solid #106de6;
+  box-shadow: 2px 2px 4px #0750e0;
+  margin-bottom: 1rem;
+  background: #e44f4f;
+  .service-icon {
+    font-size: 2rem;
+    color: #248eff;
+  }
+  .service-body {
+    .service-title {
+      font-size: 1.1rem;
+      color: #4e4e4e;
+      margin-bottom: 1.2rem;
+    }
+    .service-description {
+      font-size: 0.9rem;
+      color: #6f6f6f;
+    }
+  }
+}
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+.skew {
+  transform:skew(35deg);
+}
+.scale {
+  transform:scale(1,0.5);
+}
+.rotate {
+  transform:rotate(45deg);
+}
+.translate {
+  transform:translate(10px, 20px);
+}
+.rotate-skew-scale-translate {
+  transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);
+}
+[data-aos^='fade'][data-aos^='fade'] {
+  opacity: 0;
+  transition-property: opacity, transform;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-aos='fade-up'] {
+  transform: translate3d(0, 0);
+}
